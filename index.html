@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IndiaHealthLink</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>IndiaHealthLink</h1>
+    <p>Find Trusted Doctors, Medicines & Services Near You</p>
+    <span class="sub-desc">Your gateway to smarter healthcare — <span style="color:#FFEB3B;">AI-based doctor suggestions</span>, <span style="color:#03A9F4;">GPS hospital tracking</span>, and <span style="color:#4CAF50;">real-time medicine availability</span>.</span>
+  </header>
+  <nav>
+    <a onclick="showTab('home')">Home</a>
+    <a onclick="showTab('doctors')">Find Doctors</a>
+    <a onclick="showTab('medicines')">Medicine Availability</a>
+    <a onclick="showTab('hospitals')">Nearby Hospitals</a>
+    <a onclick="showTab('providers')">For Providers</a>
+  </nav>
+  <main>
+    <section id="home" class="active">
+      <h2>About the Service</h2>
+      <p>IndiaHealthLink is a smart healthcare solution connecting users with verified doctors, pharmacies, and hospitals based on your location and health needs.</p>
+      <ul class="feature-list">
+        <li>AI-based doctor matching</li>
+        <li>Live medicine inventory</li>
+        <li>GPS-based hospital distance & route</li>
+        <li>Hospital & pharmacy onboarding (provider panel)</li>
+      </ul>
+      <img src="images/home.png" alt="Home Feature" />
+    </section>
+    <section id="doctors">
+      <h2>Find Doctors Near You</h2>
+      <p>Allow location access to find doctors nearby and get AI-based recommendations.</p>
+      <button onclick="getLocation()">Get My Location</button>
+      <div id="location-output"></div>
+      <img src="images/doctors.png" alt="Doctors Nearby" />
+    </section>
+    <section id="medicines">
+      <h2>Check Medicine Availability</h2>
+      <p>Enter the medicine name and your area to check local stock:</p>
+      <input type="text" placeholder="Medicine name...">
+      <input type="text" placeholder="Your area or pin code...">
+      <button>Search</button>
+      <img src="images/medicines.png" alt="Medicine Availability" />
+    </section>
+    <section id="hospitals">
+      <h2>Hospitals Near You</h2>
+      <p>Use GPS to see hospitals near your location with estimated distance:</p>
+      <button onclick="getLocation()">Show Nearby Hospitals</button>
+      <div id="hospitals-output">No hospitals found nearby. Try updating your location.</div>
+    </section>
+    <section id="providers">
+      <h2>Join as a Service Provider</h2>
+      <p>Only hospitals and medical shops can request onboarding to provide their services on the platform.</p>
+      <form>
+        <input type="text" placeholder="Hospital/Pharmacy Name" required />
+        <input type="text" placeholder="Location" required />
+        <textarea rows="4" placeholder="Service Description"></textarea>
+        <button type="submit">Request Onboarding</button>
+      </form>
+      <img src="images/providers.png" alt="For Providers" />
+    </section>
+  </main>
+  <button id="topBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
